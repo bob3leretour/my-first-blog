@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.mail import send_mail
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
@@ -12,6 +13,7 @@ class Post(models.Model):
 
     def publish(self):
         self.published_date = timezone.now()
+        send_mail('HELLO', 'BLABLA', 'benjamin.chomel@hotmail.com', ['benjamin.chomel@hotmail.com'])
         self.save()
 
     def __str__(self):
