@@ -13,7 +13,6 @@ class Post(models.Model):
 
     def publish(self):
         self.published_date = timezone.now()
-        send_mail('HELLO', 'BLABLA', 'benjamin.chomel@hotmail.com', ['benjamin.chomel@hotmail.com'])
         self.save()
 
     def __str__(self):
