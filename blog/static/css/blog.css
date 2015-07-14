@@ -47,11 +47,16 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
+.post-login textarea, .post-login input {
+    width: 20%;
+}
+
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
+     font-family: 'Lobster';
 }
 
 .post {

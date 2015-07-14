@@ -1,10 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post
-from .forms import PostForm
+from .forms import PostForm, LoginForm
 from django.shortcuts import redirect
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponseRedirect, HttpResponse
+
 
 def post_list(request):
+    user = authenticate(username='benjamin', password='kenshiro8')
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
@@ -45,3 +49,29 @@ def post_remove(request, pk):
     form = PostForm(instance=post)
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
+
+def post_login(request):
+    form = LoginForm()
+    return render(request, 'blog/post_login.html', {'form': form})
+
+def user_login(request):
+    if request.method == 'POST':
+
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(username=username, password=password)
+
+        if user:
+            if user.is_active:
+                login(request, user)
+                return render(request, 'blog/logged.html', {})
+            else:
+                return HttpResponse("Your  account is disabled.")
+        else:
+
+            return HttpResponse("Invalid login details supplied.")
+
+    else:
+        return HttpResponse("genial")
+       #return redirect('blog.views.post_login', {})
