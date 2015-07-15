@@ -22,10 +22,13 @@ h1 a {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
-
-
 }
 
+.fieldWrapper
+{
+    font-family: 'Lobster', cursive;
+    width: 20%
+}
 .content {
     margin-left: 40px;
 }
@@ -37,6 +40,10 @@ h1, h2, h3, h4 {
 .date {
     float: right;
     color: #828282;
+}
+
+.hhh {
+    font-family: 'Lobster', cursive;
 }
 
 .save {
@@ -54,9 +61,9 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
+    font-size: 18pt;
     margin-right: 20px;
-     font-family: 'Lobster';
+    font-family: 'Lobster';
 }
 
 .post {

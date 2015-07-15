@@ -6,14 +6,17 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{% static "css/blog.css" %}">
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <title>blog bob3</title>
     </head>
     <body>
         <div class="page-header" >
-             <!--a href="{% url "blog.views.post_login" %}" class="top-menu" class="btn btn-primary btn-md"> Login  </a-->
+             <a href="{% url "blog.views.post_login" %}" class="top-menu" class="btn btn-primary btn-md"> Login  </a>
+            <a href="{% url "blog.views.post_login" %}" class="top-menu" class="btn btn-primary btn-md"> Log out  </a>
             <a href="{% url "blog.views.post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
             <h1><a href="/">Blog des oiseaux</a>  </h1>
         </div>
 

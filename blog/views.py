@@ -5,11 +5,10 @@ from .forms import PostForm, LoginForm
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth import logout
 
 
 def post_list(request):
-    user = authenticate(username='benjamin', password='kenshiro8')
-    login(request, user)
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
@@ -52,18 +51,12 @@ def post_remove(request, pk):
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_login(request):
-    form = LoginForm()
-    return render(request, 'blog/post_login.html', {'form': form})
-
-def user_login(request):
     if request.method == 'POST':
-
         username = request.POST['username']
         password = request.POST['password']
-
         user = authenticate(username=username, password=password)
 
-        if user:
+        if  user is not None:
             if user.is_active:
                 login(request, user)
                 return render(request, 'blog/logged.html', {})
@@ -74,5 +67,10 @@ def user_login(request):
             return HttpResponse("Invalid login details supplied.")
 
     else:
-        return HttpResponse("genial")
-       #return redirect('blog.views.post_login', {})
+        form = LoginForm()
+        return render(request, 'blog/post_login.html', {'form': form})
+
+
+def logout_view(request):
+    logout(request)
+    redirect('blog.views.post_list')

@@ -1,12 +1,17 @@
 {% extends "blog/base.html" %}
 
+
 {% block content %}
     <h1>Login</h1>
-    <form  method="post">
+    <form method="POST" class="post-form">{% csrf_token %}
+       {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+        </div>
+{% endfor %}
+        <button type="submit" class="btn btn-lg btn-primary btn-block"> sign in</button>
 
-    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
 
-        <input id="your_password" type="text" name="your_password" value="{{ current_password }}">
-    <input type="submit" value="OK">
-</form>
+    </form>
 {% endblock %}
