@@ -5,8 +5,8 @@ urlpatterns = [
     url(r'^$', views.post_list),
     url(r'^caca$', views.post_list),
 
-
-    #url(r'^post/loggedin/$', views.user_login, name='user_login'),
+    url(r'^post/register/$', views.post_register, name='post_register'),
+    url(r'^post/logout/$', views.post_logout, name='post_logout'),
     url(r'^post/login/$', views.post_login, name='post_login'),
     url(r'^post/(?P<pk>[1-9]+)/$', views.post_details),
     url(r'^post/new/$', views.post_new, name='post_new'),

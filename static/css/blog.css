@@ -12,22 +12,20 @@ h1 a {
 .page-header {
     background-color: #444E5A;
     margin-top: 0;
-    padding: 40px 20px 40px 40px;
-    background: url(img.jpg);
-    background-size:caption;
-    background-repeat: no-repeat;
-
+    padding: 20px 20px 20px 40px;
+    #background: url(img.jpg);
+    #background-size:cover;
+    #background-repeat: no-repeat;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 5pt;
     text-decoration: none;
 }
 
 .fieldWrapper
 {
-    font-size: 15pt;
     font-family: 'Lobster', cursive;
     width: 20%
 }
@@ -63,18 +61,8 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 23pt;
+    font-size: 5pt;
     margin-right: 20px;
-    margin-top: 20px;
-    font-family: 'Lobster';
-}
-
-.top-menu-text{
-    color: #ffffff;
-    float: right;
-    font-size: 20pt;
-    margin-right: 20px;
-     margin-top: 20px;
     font-family: 'Lobster';
 }
 

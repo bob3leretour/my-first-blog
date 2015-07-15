@@ -13,8 +13,9 @@
     </head>
     <body>
         <div class="page-header" >
-             <a href="{% url "blog.views.post_login" %}" class="top-menu" class="btn btn-primary btn-md"> Login  </a>
-            <a href="{% url "blog.views.post_login" %}" class="top-menu" class="btn btn-primary btn-md"> Log out  </a>
+             <a href="{% url "blog.views.post_login" %}" class="top-menu-text" class="btn btn-primary btn-md"> Login  </a>
+            <a href="{% url "blog.views.post_logout" %}" class="top-menu-text" class="btn btn-primary btn-md"> Logout  </a>
+            <a href="{% url "blog.views.post_register" %}" class="top-menu-text" class="btn btn-primary btn-md"> Register  </a>
             <a href="{% url "blog.views.post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 
             <h1><a href="/">Blog des oiseaux</a>  </h1>
