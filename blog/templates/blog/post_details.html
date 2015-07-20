@@ -19,7 +19,7 @@
         <!--a class="btn btn-default" href="{% url "post_remove" pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a-->
 
         <h1>{{ post.title }}</h1>
-         <a href="{{post.photo.url}}"> <img style="width:304px;height:228px;" src="{{post.photo.url}}" ></a>
+          <a href="{{post.photo.url}}"> <img style="width:200px;height:auto;" src="{{post.photo.url}}" ></a>
         <p>{{ post.text|linebreaks }}</p>
     </div>
 
