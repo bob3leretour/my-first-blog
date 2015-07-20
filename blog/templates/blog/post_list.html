@@ -19,12 +19,19 @@
 
 
                     <h1><a href="{% url "blog.views.post_details" pk=post.pk %}">{{ post.title }}</a></h1>
-                    <p>{{ post.text|linebreaks }}</p>
+                     <a href="{{post.photo.url}}"> <img style="width:200px;height:auto;" src="{{post.photo.url}}" ></a>
+                    <p>{{ post.text|linebreaks }}  </p>
+
+
+                    <br>
 
                     <div class="hhh">
                         By {{ post.author }}
                     </div>
 
+
+
                 </div>
 {% endfor %}
+
 {% endblock content %}

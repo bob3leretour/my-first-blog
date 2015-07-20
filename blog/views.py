@@ -1,13 +1,32 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post
-from .forms import PostForm, LoginForm, RegisterForm
+from .forms import PostForm, LoginForm, RegisterForm, ContactForm
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
+
+
+def post_contact(request):
+    if request.method == 'POST':
+        sender = request.POST['sender']
+        subject = request.POST['subject']
+        message = request.POST['message']
+        result = send_mail(subject, message,sender,['benjaminchomel@hotmail.com'], fail_silently=False)
+
+        if  result == 1 :
+           return HttpResponse("Sent successfully")
+        else:
+
+            return HttpResponse("Sending email failed")
+
+    else:
+        form = ContactForm()
+        return render(request, 'blog/post_contact.html', {'form': form})
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
@@ -20,7 +39,7 @@ def post_details(request,pk):
 @login_required(login_url='/post/login')
 def post_new(request):
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -98,3 +117,4 @@ def post_register(request):
     else:
         form = RegisterForm()
         return render(request, 'blog/post_register.html', {'form': form})
+

@@ -13,7 +13,7 @@ h1 a {
     background-color:#0B0B3B;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
-    #background: url(img.jpg);
+    #background: url(../../../media/default.jpg);
     #background-size:contain;
     #background-repeat: no-repeat;
 
@@ -42,6 +42,11 @@ h1, h2, h3, h4 {
 .date {
     float: right;
     color: #828282;
+}
+
+.picture {
+    float: right;
+
 }
 
 .hhh {

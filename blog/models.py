@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.core.mail import send_mail
+from django.core.files import File
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
@@ -10,6 +11,11 @@ class Post(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
+    photo = models.FileField(upload_to='photos/%Y/%m/%d', default='default.jpg')
+
+class Document(models.Model):
+    docfile = models.FileField(upload_to='documents/%Y/%m/%d')
+
 
     def publish(self):
         self.published_date = timezone.now()
