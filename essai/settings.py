@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
+    'blog',
+    'easy_thumbnails'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -112,6 +113,8 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'bob3leretour2@gmail.com'
 EMAIL_HOST_PASSWORD = 'Mdpasse1983'
 EMAIL_USE_TLS = True
+
+THUMBNAIL_DEBUG = True
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
