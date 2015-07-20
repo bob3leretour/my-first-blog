@@ -19,7 +19,7 @@
 
 
                     <h1><a href="{% url "blog.views.post_details" pk=post.pk %}">{{ post.title }}</a></h1>
-                     <a href="{{post.photo.url}}"> <img style="width:200px;height:auto;" src="{{post.photo.url}}" ></a>
+                     <a href="{{post.photo.url}}"> <img style="width:200px;height:auto;" src="{{post.photo.url}}" .image(alt = "Sample Image")></a>
                     <p>{{ post.text|linebreaks }}  </p>
 
 
