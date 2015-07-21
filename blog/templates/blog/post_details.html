@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load thumbnail %}
 
 {% block content %}
 
@@ -19,7 +20,7 @@
         <!--a class="btn btn-default" href="{% url "post_remove" pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a-->
 
         <h1>{{ post.title }}</h1>
-          <a href="{{post.photo.url}}"> <img style="width:550px;height:auto;" src="{{post.photo.url}}"   .image(alt = "Sample Image"></a>
+          <a href="{{post.photo.url}}">  <img src={% thumbnail post.photo 800x800 %}></a>
         <p>{{ post.text|linebreaks }}</p>
     </div>
 
