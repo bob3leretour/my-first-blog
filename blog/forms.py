@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from .models import Post
+from .models import Post, Category
 from django.contrib.auth.models import User
 
 
@@ -21,8 +21,13 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'text', 'photo')
+        fields = ('title', 'text', 'photo','category')
 
+class CategoryForm(forms.ModelForm):
+
+    class Meta:
+        model = Category
+        fields = ('name',)
 
 
 

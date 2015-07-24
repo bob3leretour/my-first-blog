@@ -3,6 +3,10 @@ h1 a {
 }
 body {
     padding-left: 15px;
+    background-color:whitesmoke;
+    #background-image: url(../../../media/wood.jpg);
+    #background-repeat: no-repeat;
+    #background-size: 70%;
 }
 h1 a {
     color: #FCA205;
@@ -51,6 +55,8 @@ h1, h2, h3, h4 {
 
 .hhh {
     font-family: 'Lobster', cursive;
+    float:bottom;
+    width:25%;
 }
 
 .save {
