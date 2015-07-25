@@ -20,7 +20,7 @@
     {% for post in posts %}
         {% if post.category == category %}
         <!--div style="float:left;width:25%"-->
-        <div class="col-md-3 col-sm-3" >
+        <div class="col-md-3 col-sm-4" >
             <a href="{% url "blog.views.post_details" pk=post.pk %}">  <img src="{% thumbnail post.photo 400x400 %}"  class="img-circle"> <!--img src="{{ post.photo.url }}"  class="img-thumbnail" width="400" height=auto-->  </a>
          </div>
         {% endif %}
