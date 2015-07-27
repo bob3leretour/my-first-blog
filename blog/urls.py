@@ -4,10 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^$', views.post_list),
-    url(r'^caca$', views.post_list),
-
-
+    url(r'^$', views.post_main),
+    url(r'^post/(?P<pk>[0-9]+)/list/$', views.post_list, name='post_list'),
     url(r'^post/contact/$', views.post_contact, name='post_contact'),
     url(r'^post/register/$', views.post_register, name='post_register'),
     url(r'^post/logout/$', views.post_logout, name='post_logout'),

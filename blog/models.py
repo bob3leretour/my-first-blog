@@ -13,11 +13,23 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class Main_category(models.Model):
+    name =  models.TextField()
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.name
+
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
     category = models.ForeignKey('Category', default=1)
+    main_category = models.ForeignKey('Main_category', default=1)
+    for_mainpagedisplay = models.BooleanField(default=False)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(

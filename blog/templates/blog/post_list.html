@@ -4,12 +4,6 @@
 
 {% block content %}
 
-    {% if user.is_authenticated %}
-     <p>Welcome, <b>{{ user.username }}</b>. Thanks for logging in.</p>
-    {% else %}
-    <p>Welcome, new user. Please log in.</p>
-    {% endif %}
-
 {% for category  in categories %}
      <div class="row">
         <div class="col-md-12" >

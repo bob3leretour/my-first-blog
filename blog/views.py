@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post,Category
+from .models import Post,Category, Main_category
 from .forms import PostForm, LoginForm, RegisterForm, ContactForm
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
@@ -9,7 +9,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
-
+from django.db.models import Count
 
 def post_contact(request):
     if request.method == 'POST':
@@ -28,10 +28,20 @@ def post_contact(request):
         form = ContactForm()
         return render(request, 'blog/post_contact.html', {'form': form})
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+def post_list(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post1 = Post.objects.filter(main_category = post.main_category)
+    posts = post1.filter(published_date__lte=timezone.now()).order_by('-published_date')
     categories = Category.objects.all()
+    for cat in categories:
+        if len(posts.filter(category=cat))== 0 :
+            categories = categories.exclude(name=cat.name)
+
     return render(request, 'blog/post_list.html', {'posts': posts, 'categories':categories})
+
+def post_main(request):
+    posts = Post.objects.filter(for_mainpagedisplay=True)
+    return render(request, 'blog/post_main.html', {'posts': posts})
 
 def post_details(request,pk):
     post = get_object_or_404(Post, pk=pk)
