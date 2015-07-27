@@ -40,7 +40,7 @@ def post_list(request, pk):
     return render(request, 'blog/post_list.html', {'posts': posts, 'categories':categories})
 
 def post_main(request):
-    posts = Post.objects.filter(for_mainpagedisplay=True)
+    posts = Post.objects.filter(for_mainpagedisplay=True).order_by('-published_date')
     return render(request, 'blog/post_main.html', {'posts': posts})
 
 def post_details(request,pk):
