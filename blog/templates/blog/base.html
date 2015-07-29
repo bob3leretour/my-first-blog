@@ -25,7 +25,7 @@
                 <a href="{% url "blog.views.post_login" %}" class="top-menu-text" class="btn btn-primary btn-md"> Login  </a>
                <a href="{% url "blog.views.post_register" %}" class="top-menu-text" class="btn btn-primary btn-md"> Register  </a>
             {% endif %}
-            <a href="{% url "blog.views.post_contact" %}" class="top-menu"><span class="glyphicon glyphicon-envelope"></span></a>
+
             <a href="{% url "blog.views.post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 
             <h1><a href="/">Hudoq and Tatanua</a>  </h1>
@@ -38,19 +38,17 @@
 
             {% block content %}
             {% endblock %}
-
+            <p> {{linebreaks}}</p>
          </div>
 
        </div>
-      </div>
 
+       <div id="footer" class="page-footer" >
+            <p> You can contact us here <a href="{% url "blog.views.post_contact" %}" class="top-footer"><span class="glyphicon glyphicon-envelope"></span></a>  </p>
+       </div>
 
-     <div class="page-footer" >
-         <p> Contactez le service client au 0475897847</p>
      </div>
-
-
-    </body>
+ </body>
 
 
 </html>

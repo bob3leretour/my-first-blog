@@ -2,16 +2,17 @@
 
 
 {% block content %}
-    <h1>Write your message and send it to us</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-       {% for field in form %}
+    <div class="col-md-4 col-sm-6" >
+        <h1>Write your message and send it to us</h1>
 
-            {{ field.errors }}
-            {{ field.label_tag }} {{ field }}
+             <form method="POST" class="post-form">{% csrf_token %}
+             {% for field in form %}
 
-{% endfor %}
-       <button type="submit" class="glyphicon glyphicon-ok"   >  </button>
+                {{ field.errors }}
+                {{ field.label_tag }} {{ field }}
 
-
-    </form>
+             {% endfor %}
+             <button type="submit" class="glyphicon glyphicon-ok"   >  </button>
+             </form>
+     </div>
 {% endblock %}
