@@ -28,9 +28,10 @@ def post_contact(request):
         form = ContactForm()
         return render(request, 'blog/post_contact.html', {'form': form})
 
-def post_list(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    post1 = Post.objects.filter(main_category = post.main_category)
+def post_list(request, cat):
+    #post = get_object_or_404(Post, pk=pk)
+    main_category = get_object_or_404(Main_category, pk=cat)
+    post1 = Post.objects.filter(main_category = main_category)
     posts = post1.filter(published_date__lte=timezone.now()).order_by('-published_date')
     categories = Category.objects.all()
     for cat in categories:
@@ -38,6 +39,9 @@ def post_list(request, pk):
             categories = categories.exclude(name=cat.name)
 
     return render(request, 'blog/post_list.html', {'posts': posts, 'categories':categories})
+
+
+
 
 def post_main(request):
     posts = Post.objects.filter(for_mainpagedisplay=True).order_by('-published_date')

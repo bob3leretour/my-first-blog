@@ -5,10 +5,22 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-     <p>Welcome, <b>{{ user.username }}</b>. Thanks for logging in.</p>
+     <p>Welcome, <b>{{ user.username }}</b>. Thanks for logging in.  <b>Select a category you are interested to discover:</b></p>
     {% else %}
-    <p>Welcome, new user. Please log in.</p>
+    <p>Welcome, new user. Please log in. <b>Select a category you are interested to discover:</b></p>
     {% endif %}
+
+     <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+             <a href="{% url "blog.views.post_list" cat=1 %}"><button type="button" class="btn btn-default"><b>Borneo - Hudoq masks</b></button></a>
+        </div>
+        <div class="btn-group" role="group">
+             <a href="{% url "blog.views.post_list" cat=2%}"><button type="button" class="btn btn-default"><b>New Ireland masks</b></button></a>
+        </div>
+        <div class="btn-group" role="group">
+           <a href="{% url "blog.views.post_list" cat=3%}"><button type="button" class="btn btn-default" > <b>New Britain masks</b>  </button> </a>
+        </div>
+    </div>
 
 <div class="row">
     <div class="col-md-3  col-sm-2" >
@@ -32,14 +44,14 @@
         {% for post  in posts %}
             {% if forloop.counter   == 1 %}
                  <div class="item active">
-                      <a href="{% url "blog.views.post_list" pk=post.pk %}"> <img src="{% thumbnail post.photo 800x800 %}" data-holder-rendered="true"  > </a>
+                      <a href="{% url "blog.views.post_list" cat=post.main_category.pk %}"> <img src="{% thumbnail post.photo 700x700 %}" data-holder-rendered="true"  > </a>
                      <div class="carousel-caption">
                         <h3>{{post.title}}</h3>
                      </div>
                   </div>
             {% else %}
                  <div class="item">
-                     <a href="{% url "blog.views.post_list" pk=post.pk %}"> <img src="{% thumbnail post.photo 800x800 %}" data-holder-rendered="true"  > </a>
+                     <a href="{% url "blog.views.post_list" cat=post.main_category.pk %}"> <img src="{% thumbnail post.photo 700x700 %}" data-holder-rendered="true"  > </a>
                      <div class="carousel-caption">
                         <h3>{{post.title}}</h3>
                      </div>
