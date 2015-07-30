@@ -126,15 +126,22 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
-
-
 .carousel {
-    min-height: 800px;
-    max-height: 800px;
-    overflow: hidden;
+    
 
 }
+
 .carousel .item img {
 
     margin: 0 auto
+}
+
+
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+
 }
