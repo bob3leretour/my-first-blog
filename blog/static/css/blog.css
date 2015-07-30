@@ -127,7 +127,10 @@ h1, h2, h3, h4 {
 }
 
 .carousel {
-    
+   #min-height: 800px;
+
+   #max-height: 800px;
+   #overflow: hidden;
 
 }
 
