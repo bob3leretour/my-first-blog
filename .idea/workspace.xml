@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="blog.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/static/css/blog.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30559757" vertical-offset="1991" max-vertical-offset="2652">
-              <caret line="129" column="19" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1872" max-vertical-offset="2533">
+              <caret line="143" column="0" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -122,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post_main.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="post_main.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog/templates/blog/post_main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0" vertical-offset="459" max-vertical-offset="1428">
-              <caret line="53" column="135" selection-start-line="53" selection-start-column="135" selection-end-line="53" selection-end-column="135" />
+            <state vertical-scroll-proportion="0.89067525" vertical-offset="347" max-vertical-offset="1428">
+              <caret line="53" column="131" selection-start-line="53" selection-start-column="131" selection-end-line="53" selection-end-column="131" />
               <folding />
             </state>
           </provider>
@@ -156,8 +156,8 @@
         <option value="$PROJECT_DIR$/blog/urls.py" />
         <option value="$PROJECT_DIR$/blog/views.py" />
         <option value="$PROJECT_DIR$/blog/templates/blog/base.html" />
-        <option value="$PROJECT_DIR$/blog/templates/blog/post_main.html" />
         <option value="$PROJECT_DIR$/blog/static/css/blog.css" />
+        <option value="$PROJECT_DIR$/blog/templates/blog/post_main.html" />
       </list>
     </option>
   </component>
@@ -1004,18 +1004,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/blog/post_main.html">
+    <entry file="file://$PROJECT_DIR$/blog/static/css/blog.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0" vertical-offset="459" max-vertical-offset="1428">
-          <caret line="53" column="135" selection-start-line="53" selection-start-column="135" selection-end-line="53" selection-end-column="135" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1872" max-vertical-offset="2533">
+          <caret line="143" column="0" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/static/css/blog.css">
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/post_main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30559757" vertical-offset="1991" max-vertical-offset="2652">
-          <caret line="129" column="19" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.89067525" vertical-offset="347" max-vertical-offset="1428">
+          <caret line="53" column="131" selection-start-line="53" selection-start-column="131" selection-end-line="53" selection-end-column="131" />
           <folding />
         </state>
       </provider>

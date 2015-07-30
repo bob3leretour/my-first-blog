@@ -23,9 +23,9 @@
     </div>
 
 <div class="row-fluid">
-    <div class="col-md-3  col-sm-0" >
+    <div class="col-md-3  col-sm-1" >
     </div>
-    <div class="col-md-6  col-sm-12" >
+    <div class="col-md-6  col-sm-10" >
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"  data-wrap="true" data-interval="3500" data-pause="false">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -44,14 +44,14 @@
         {% for post  in posts %}
             {% if forloop.counter   == 1 %}
                  <div class="item active">
-                      <a href="{% url "blog.views.post_list" cat=post.main_category.pk %}"> <img src="{% thumbnail post.photo 700x700 %}" data-holder-rendered="true"  class="img-responsive"> </a>
+                      <a href="{% url "blog.views.post_list" cat=post.main_category.pk %}"> <img src="{% thumbnail post.photo 750x750 %}" data-holder-rendered="true"  class="img-responsive"> </a>
                      <div class="carousel-caption">
                         <h3>{{post.title}}</h3>
                      </div>
                   </div>
             {% else %}
                  <div class="item">
-                     <a href="{% url "blog.views.post_list" cat=post.main_category.pk %}"> <img src="{% thumbnail post.photo 700x700 %}" data-holder-rendered="true" class="img-responsive" > </a>
+                     <a href="{% url "blog.views.post_list" cat=post.main_category.pk %}"> <img src="{% thumbnail post.photo 750x750 %}" data-holder-rendered="true" class="img-responsive" > </a>
                      <div class="carousel-caption">
                         <h3>{{post.title}}</h3>
                      </div>
@@ -71,7 +71,7 @@
         </a>
         </div>
     </div>
-    <div class="col-md-3  col-sm-2" >
+    <div class="col-md-3  col-sm-1" >
     </div>
 </div>
 
