@@ -44,14 +44,14 @@
         {% for post  in posts %}
             {% if forloop.counter   == 1 %}
                  <div class="item active">
-                      <a href="{% url "blog.views.post_list" cat=post.main_category.pk %}"> <img src="{% thumbnail post.photo 700x700 %}" data-holder-rendered="true"  > </a>
+                      <a href="{% url "blog.views.post_list" cat=post.main_category.pk %}"> <img src="{% thumbnail post.photo 700x700 %}" data-holder-rendered="true"  class="img-responsive"> </a>
                      <div class="carousel-caption">
                         <h3>{{post.title}}</h3>
                      </div>
                   </div>
             {% else %}
                  <div class="item">
-                     <a href="{% url "blog.views.post_list" cat=post.main_category.pk %}"> <img src="{% thumbnail post.photo 700x700 %}" data-holder-rendered="true"  > </a>
+                     <a href="{% url "blog.views.post_list" cat=post.main_category.pk %}"> <img src="{% thumbnail post.photo 700x700 %}" data-holder-rendered="true" class="img-responsive" > </a>
                      <div class="carousel-caption">
                         <h3>{{post.title}}</h3>
                      </div>
